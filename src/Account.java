@@ -1,11 +1,15 @@
-public abstract class Account implements Comparable<Account>{
-    public static double getBalance;
+
+public abstract class Account implements Comparable<Account> {
     protected Profile holder;
     protected double balance;
     public abstract double monthlyInterest();
     public abstract double monthlyFee();
 
-    public double getBalance(){
-        return this.balance;
+    public Account(Profile holder, double balance) {
+        this.holder = holder;
+        this.balance = balance;
     }
+
+    public abstract String stringWithFees();
+
 }
