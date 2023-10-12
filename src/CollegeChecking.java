@@ -1,7 +1,7 @@
 public class CollegeChecking {
     private Campus campus;
 
-    final int fee = 12;
+
     final double intrestRate = 0.01;
     public enum Campus{
         NewBrunswick(0),
