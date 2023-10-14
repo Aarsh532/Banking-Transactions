@@ -15,9 +15,10 @@ public class MoneyMarket extends Savings{
 
 
     /**
-     *
-     * @param
-     * @return
+     * Creates the money market instance
+     * @param holder as Profile object
+     * @param balance as double
+     * @param isLoyal as boolean
      */
     public MoneyMarket(Profile holder, double balance, boolean isLoyal) {
         super(holder, balance);
@@ -27,9 +28,8 @@ public class MoneyMarket extends Savings{
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Converts string to correct format
+     * @return String with correct format
      */
     @Override
     public String toString() {
@@ -39,9 +39,8 @@ public class MoneyMarket extends Savings{
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Converts string with fees to corect format
+     * @return String with correct format
      */
     public String stringWithFees(){
         String feeStr = String.format("$%.2f", monthlyFee());
@@ -54,9 +53,9 @@ public class MoneyMarket extends Savings{
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Checks if object equals a money market object
+     * @param obj as Object
+     * @return true if object equals this, returns false otherwise
      */
     @Override
     public boolean equals(Object obj){
@@ -68,7 +67,7 @@ public class MoneyMarket extends Savings{
     }
 
     /**
-     *
+     * Compares accounts
      * @param
      * @return
      */
@@ -122,9 +121,7 @@ public class MoneyMarket extends Savings{
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Increments withdrawals
      */
     public void incrementWithdrawals(){
         withdrawal++;
