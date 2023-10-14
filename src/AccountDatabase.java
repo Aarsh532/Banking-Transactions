@@ -12,10 +12,21 @@ public class AccountDatabase {
     private static final int STARTING_NUM_ACCT = 0;
     private static final double MIN_BALANCE_FEE_WAIVED = 2000;
 
+    /**
+     *
+     * @param
+     * @return
+     */
     public AccountDatabase(){
         accounts = new Account[INITIAL_CAPACITY];
         numAcct = STARTING_NUM_ACCT;
     }
+
+    /**
+     *
+     * @param
+     * @return
+     */
     private int find(Account account) {
         int index = NOT_FOUND;
         for (int i = 0; i < numAcct; i++) {
@@ -26,6 +37,12 @@ public class AccountDatabase {
         }
         return index;
     }
+
+    /**
+     *
+     * @param
+     * @return
+     */
     private void grow(){
         Account[] copy = new Account[numAcct + INCREMENT_AMOUNT];
         for(int i = 0; i < numAcct; i++){
@@ -33,11 +50,22 @@ public class AccountDatabase {
         }
         accounts = copy;
 
-    } //increase the capacity by 4
+    }
+
+    /**
+     *
+     * @param
+     * @return
+     */
     public boolean contains(Account account){
         return find(account) != NOT_FOUND;
     }
 
+    /**
+     *
+     * @param
+     * @return
+     */
     public boolean open(Account account){
         if(contains(account)){
             return false;
@@ -49,6 +77,12 @@ public class AccountDatabase {
         numAcct++;
         return true;
     }
+
+    /**
+     *
+     * @param
+     * @return
+     */
     public boolean close(Account account){
         int removeIndex = find(account);
         if (removeIndex != NOT_FOUND) {
@@ -62,6 +96,11 @@ public class AccountDatabase {
         return false;
     }
 
+    /**
+     *
+     * @param
+     * @return
+     */
     public boolean withdraw(Account account){
         int index = find(account);
         if (index == NOT_FOUND) {
@@ -83,6 +122,11 @@ public class AccountDatabase {
         return true;
     }
 
+    /**
+     *
+     * @param
+     * @return
+     */
     private void selectionSortAccountType() {
         int n = numAcct;
 
@@ -100,6 +144,11 @@ public class AccountDatabase {
         }
     }
 
+    /**
+     *
+     * @param
+     * @return
+     */
     public void deposit(Account account){
         int index = find(account);
         if (index == NOT_FOUND) {
@@ -107,18 +156,36 @@ public class AccountDatabase {
         }
         accounts[index].balance += account.balance;
     }
+
+    /**
+     *
+     * @param
+     * @return
+     */
     public void printSorted(){
         selectionSortAccountType();
         for (int i = 0; i < numAcct; i++) {
             System.out.println(accounts[i].toString());
         }
     }
+
+    /**
+     *
+     * @param
+     * @return
+     */
     public void printFeesAndInterests(){ //calculate interests/fees
         selectionSortAccountType();
         for(int i = 0; i< numAcct; i++){
             System.out.println(accounts[i].stringWithFees());
         }
     }
+
+    /**
+     *
+     * @param
+     * @return
+     */
     public void printUpdatedBalances(){ //apply the interests/fees
         selectionSortAccountType();
         for(int i = 0; i < numAcct; i++){
@@ -127,6 +194,11 @@ public class AccountDatabase {
         }
     }
 
+    /**
+     *
+     * @param
+     * @return
+     */
     public boolean isEmpty(){
         return numAcct == 0;
     }

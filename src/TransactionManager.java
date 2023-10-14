@@ -23,6 +23,11 @@ public class TransactionManager {
         System.out.println("Transaction Manager is running.");
     }
 
+    /**
+     *
+     * @param
+     * @return
+     */
     public void run() {
         Scanner scanner = new Scanner(System.in);
 
@@ -51,6 +56,11 @@ public class TransactionManager {
         scanner.close();
     }
 
+    /**
+     *
+     * @param
+     * @return
+     */
     private void handleOCommand(StringTokenizer tokenizer) {
         if (tokenizer.countTokens() < MIN_TOKENS_O_GENERAL) {
             System.out.println("Missing data for opening an account.");
@@ -83,18 +93,38 @@ public class TransactionManager {
         }
     }
 
+    /**
+     *
+     * @param
+     * @return
+     */
     private void handleCCommand(StringTokenizer tokenizer) {
 
     }
 
+    /**
+     *
+     * @param
+     * @return
+     */
     private void handleDCommand(StringTokenizer tokenizer) {
 
     }
 
+    /**
+     *
+     * @param
+     * @return
+     */
     private void handleWCommand(StringTokenizer tokenizer) {
 
     }
 
+    /**
+     *
+     * @param
+     * @return
+     */
     private void handlePCommand(StringTokenizer tokenizer) {
         if(!(accountDatabase.isEmpty())) {
             System.out.println("Accounts sorted by account type and profile.");
@@ -103,6 +133,12 @@ public class TransactionManager {
         }else System.out.println("Account Database is empty!");
 
     }
+
+    /**
+     *
+     * @param
+     * @return
+     */
     private void handlePICommand(StringTokenizer tokenizer) {
         if(!(accountDatabase.isEmpty())) {
             System.out.println("*list of accounts with fee and monthly interest");
@@ -111,6 +147,11 @@ public class TransactionManager {
         }else System.out.println("Account Database is empty!");
     }
 
+    /**
+     *
+     * @param
+     * @return
+     */
     private void handleUBCommand(StringTokenizer tokenizer) {
         if(!(accountDatabase.isEmpty())) {
             System.out.println("*list of accounts with fees and interests applied.");
@@ -119,8 +160,11 @@ public class TransactionManager {
         }else System.out.println("Account Database is empty!");
     }
 
-
-
+    /**
+     *
+     * @param
+     * @return
+     */
     private Date parseDate(String dateOfBirth) {
         String[] dateComponents = dateOfBirth.split("/");
         if (dateComponents.length == 3) {
@@ -135,6 +179,11 @@ public class TransactionManager {
 
     }
 
+    /**
+     *
+     * @param
+     * @return
+     */
     private boolean futureDateCheck(Date date) {
         Calendar calendar = Calendar.getInstance();
         int currentYear = calendar.get(Calendar.YEAR);
@@ -154,6 +203,11 @@ public class TransactionManager {
         return false;
     }
 
+    /**
+     *
+     * @param
+     * @return
+     */
     public static boolean isValidInitialDeposit(String initialDepositString) {
         double initialDeposit = ZERO_BALANCE;
         try {
@@ -169,6 +223,11 @@ public class TransactionManager {
         return true;
     }
 
+    /**
+     *
+     * @param
+     * @return
+     */
     public static boolean isValidCampus(String campusCode) {
         try {
             Campus.valueOf(campusCode);
@@ -179,6 +238,11 @@ public class TransactionManager {
         }
     }
 
+    /**
+     *
+     * @param
+     * @return
+     */
     public void openChecking(String firstName, String lastName, Date dob,
                              double initialDeposit) {
         Profile newProfile = new Profile(firstName, lastName, dob);
@@ -193,6 +257,12 @@ public class TransactionManager {
                     dob.dateString() + "(C) is already in the database.");
         }
     }
+
+    /**
+     *
+     * @param
+     * @return
+     */
     public void openCollegeChecking(String firstName, String lastName, Date dob,
                                     double initialDeposit, StringTokenizer tokenizer) {
         Profile newProfile = new Profile(firstName, lastName, dob);
@@ -215,6 +285,12 @@ public class TransactionManager {
                     dob.dateString() + "(CC) is already in the database.");
         }
     }
+
+    /**
+     *
+     * @param
+     * @return
+     */
     public void openSavings(String firstName, String lastName, Date dob,
                             double initialDeposit, StringTokenizer tokenizer) {
         Profile newProfile = new Profile(firstName, lastName, dob);
@@ -238,6 +314,12 @@ public class TransactionManager {
                     dob.dateString() + "(S) is already in the database.");
         }
     }
+
+    /**
+     *
+     * @param
+     * @return
+     */
     public void openMoneyMarket(String firstName, String lastName, Date dob,
                                 double initialDeposit) {
         if (initialDeposit < MoneyMarket.MIN_BALANCE_FEE_WAIVED) {
