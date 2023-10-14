@@ -1,3 +1,7 @@
+/**
+ * Account class is an abstract class that handles all account information
+ * @author Aarsh, Hersh
+ */
 
 public abstract class Account implements Comparable<Account> {
     protected Profile holder;

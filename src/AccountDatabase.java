@@ -1,4 +1,7 @@
-
+/**
+ * Account Database handles the account array and all methods for each of the commands
+ * @author Aarsh, Hersh
+ */
 
 public class AccountDatabase {
     private static final int INCREMENT_AMOUNT = 4;

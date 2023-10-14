@@ -1,4 +1,7 @@
-
+/**
+ * College Checking class extends the Checking Class
+ * @author Aarsh, Hersh
+ */
 
 public class CollegeChecking extends Checking{
     private Campus campus; //campus code

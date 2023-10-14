@@ -1,3 +1,7 @@
+/**
+ * Checking class extends the Account Class
+ * @author Aarsh, Hersh
+ */
 
 public class Checking extends Account {
     private static final double INTEREST_RATE = 0.01; // 1.0% annual interest rate

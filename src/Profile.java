@@ -1,4 +1,7 @@
-
+/**
+ * Profile class defines the first name, last name, and date of birth for account holders
+ * @author Aarsh, Hersh
+ */
 
 public class Profile implements Comparable<Profile>{
     private String fname;

@@ -1,4 +1,7 @@
-
+/**
+ * Transaction Manager handles the tokenization of the command line and processes the inputs
+ * @author Aarsh, Hersh
+ */
 
 import java.util.Calendar;
 import java.util.Scanner;

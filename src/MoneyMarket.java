@@ -1,4 +1,7 @@
-
+/**
+ * Money Market Class extends the savings class
+ * @author Aarsh, Hersh
+ */
 
 public class MoneyMarket extends Savings{
     private int withdrawal; //number of withdrawals

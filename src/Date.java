@@ -1,4 +1,7 @@
-
+/**
+ * Date class implements all calculations for valid dates
+ * @author Aarsh, Hersh
+ */
 
 public class Date implements Comparable<Date>{
     private int year;
