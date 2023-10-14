@@ -8,10 +8,12 @@ public abstract class Account implements Comparable<Account> {
     protected double balance;
     public abstract double monthlyInterest();
     public abstract double monthlyFee();
+    public abstract String stringWithFees();
 
     /**
-     *
-     * @param
+     * Method to initialize Account object
+     * @param holder as Profile
+     * @param balance as double
      * @return
      */
     public Account(Profile holder, double balance) {
@@ -19,6 +21,6 @@ public abstract class Account implements Comparable<Account> {
         this.balance = balance;
     }
 
-    public abstract String stringWithFees();
+
 
 }

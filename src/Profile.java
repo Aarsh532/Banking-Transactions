@@ -10,9 +10,10 @@ public class Profile implements Comparable<Profile>{
     private static final int EQUAL_CONDITION = 0;
 
     /**
-     *
-     * @param
-     * @return
+     * Method to initialize profile object
+     * @param firstName as String
+     * @param lastName as String
+     * @param dateOfBirth as Date
      */
     public Profile(String firstName, String lastName, Date dateOfBirth) {
         this.fname = firstName;
@@ -21,36 +22,33 @@ public class Profile implements Comparable<Profile>{
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Method to return first name
+     * @return fname as String
      */
     public String getFname(){
         return fname;
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Method to return last name
+     * @return lanem as String
      */
     public String getLname() {
         return lname;
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Method to return DOB
+     * @return dob as Date
      */
     public Date getDob() {
         return dob;
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Method to compare two profile objects
+     * @param obj as Object
+     * @return true if object equal each other, false otherwise
      */
     @Override
     public boolean equals(Object obj){
@@ -64,9 +62,9 @@ public class Profile implements Comparable<Profile>{
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Method to compare two profiles
+     * @param o as Profile
+     * @return int
      */
     @Override
     public int compareTo(Profile o) {
