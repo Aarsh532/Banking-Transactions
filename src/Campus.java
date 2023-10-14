@@ -11,27 +11,25 @@ public enum Campus {
     private final String code;
 
     /**
-     *
-     * @param
-     * @return
+     * Sets the correct campus based on the code
+     * @param code as String
      */
     private Campus(String code) {
         this.code = code;
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Method to return campus code
+     * @return code as String
      */
     public String getCode() {
         return code;
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Method to return the correct campus based on campus code
+     * @param code as String
+     * @return campus as campus
      */
     public static Campus fromCode(String code) {
         for (Campus campus : Campus.values()) {
