@@ -9,15 +9,30 @@ public class Checking extends Account {
     private static final double MIN_BALANCE_FEE_WAIVED = 1000;
     private static final int NUM_MONTHS = 12;
 
+    /**
+     *
+     * @param
+     * @return
+     */
     public Checking(Profile holder, double balance) {
         super(holder, balance);
     }
 
+    /**
+     *
+     * @param
+     * @return
+     */
     @Override
     public double monthlyInterest() {
         return balance * (INTEREST_RATE / NUM_MONTHS);
     }
 
+    /**
+     *
+     * @param
+     * @return
+     */
     @Override
     public double monthlyFee() {
         if (balance >= MIN_BALANCE_FEE_WAIVED) {
@@ -26,6 +41,11 @@ public class Checking extends Account {
         return MONTHLY_FEE;
     }
 
+    /**
+     *
+     * @param
+     * @return
+     */
     @Override
     public String toString(){
         return String.format("%s::%s %s %s::Balance $%,.2f",
@@ -36,6 +56,11 @@ public class Checking extends Account {
                 balance);
     }
 
+    /**
+     *
+     * @param
+     * @return
+     */
     public String stringWithFees(){
         String feeStr = String.format("$%.2f", monthlyFee());
         String interestStr = String.format("$%.2f", monthlyInterest());
@@ -45,6 +70,11 @@ public class Checking extends Account {
                 balanceStr, feeStr, interestStr);
     }
 
+    /**
+     *
+     * @param
+     * @return
+     */
     @Override
     public boolean equals(Object obj){
         if (this == obj) return true;
@@ -53,6 +83,11 @@ public class Checking extends Account {
         return checking.holder.equals(holder);
     }
 
+    /**
+     *
+     * @param
+     * @return
+     */
     @Override
     public int compareTo(Account o) {
         int typeComparison =this.getClass().getSimpleName().compareTo(o.getClass().getSimpleName());

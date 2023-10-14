@@ -14,13 +14,23 @@ public class MoneyMarket extends Savings{
     private static final int NUM_MONTHS = 12;
 
 
-
+    /**
+     *
+     * @param
+     * @return
+     */
     public MoneyMarket(Profile holder, double balance, boolean isLoyal) {
         super(holder, balance);
         isLoyal = true;
         this.isLoyal = isLoyal;
 
     }
+
+    /**
+     *
+     * @param
+     * @return
+     */
     @Override
     public String toString() {
         return String.format("%s::Savings::withdrawal: %d",
@@ -28,6 +38,11 @@ public class MoneyMarket extends Savings{
                 withdrawal);
     }
 
+    /**
+     *
+     * @param
+     * @return
+     */
     public String stringWithFees(){
         String feeStr = String.format("$%.2f", monthlyFee());
         String interestStr = String.format("$%.2f", monthlyInterest());
@@ -38,6 +53,11 @@ public class MoneyMarket extends Savings{
                 balanceStr, loyalty, withdrawal, feeStr, interestStr);
     }
 
+    /**
+     *
+     * @param
+     * @return
+     */
     @Override
     public boolean equals(Object obj){
         if(this == obj) return true;
@@ -47,6 +67,11 @@ public class MoneyMarket extends Savings{
         return withdrawal == mmAccount.withdrawal;
     }
 
+    /**
+     *
+     * @param
+     * @return
+     */
     @Override
     public int compareTo(Account o) {
         int superComparison= super.compareTo(o);
@@ -63,7 +88,11 @@ public class MoneyMarket extends Savings{
         return 0;
     }
 
-
+    /**
+     *
+     * @param
+     * @return
+     */
     @Override
     public double monthlyInterest() {
         if(isLoyal){
@@ -72,6 +101,11 @@ public class MoneyMarket extends Savings{
         return balance*(INTEREST_RATE/NUM_MONTHS);
     }
 
+    /**
+     *
+     * @param
+     * @return
+     */
     @Override
     public double monthlyFee() {
         if(withdrawal > MIN_WITHDRAWALS_ALLOWED){
@@ -87,6 +121,11 @@ public class MoneyMarket extends Savings{
         return MONTHLY_FEE;
     }
 
+    /**
+     *
+     * @param
+     * @return
+     */
     public void incrementWithdrawals(){
         withdrawal++;
     }
