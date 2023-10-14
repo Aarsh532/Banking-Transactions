@@ -10,7 +10,7 @@ public class Checking extends Account {
     private static final int NUM_MONTHS = 12;
 
     /**
-     * Methpd to create instance of checking object
+     * Method to create instance of checking object
      * @param holder as Profile
      * @param balance as double
      */
