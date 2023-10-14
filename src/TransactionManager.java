@@ -34,9 +34,7 @@ public class TransactionManager {
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Main method that runs project and handles tokens
      */
     public void run() {
         Scanner scanner = new Scanner(System.in);
@@ -51,7 +49,7 @@ public class TransactionManager {
             switch (firstToken) {
                 case "Q" -> isRunning = false;
                 case "O" -> handleOCommand(tokenizer);
-                case "C" -> handleCCommand(tokenizer);
+                case "C" -> handleCommand(tokenizer);
                 case "D" -> handleDCommand(tokenizer);
                 case "W" -> handleWCommand(tokenizer);
                 case "P" -> handlePCommand(tokenizer);
@@ -66,9 +64,8 @@ public class TransactionManager {
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Mehtod to handle command for opening an account
+     * @param tokenizer as StringTokenizer
      */
     private void handleOCommand(StringTokenizer tokenizer) {
         if (tokenizer.countTokens() < MIN_TOKENS_O_D_W) {
@@ -100,11 +97,10 @@ public class TransactionManager {
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Method to handle command for closing an account
+     * @param tokenizer as StringTokenizer
      */
-    private void handleCCommand(StringTokenizer tokenizer) {
+    private void handleCommand(StringTokenizer tokenizer) {
         if (tokenizer.countTokens() < MIN_TOKENS_C) {
             System.out.println("Missing data for closing an account.");
             return;
@@ -129,9 +125,8 @@ public class TransactionManager {
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Method to handle command for deposits
+     * @param tokenizer as StringTokenizer
      */
     private void handleDCommand(StringTokenizer tokenizer) {
         if (tokenizer.countTokens() < MIN_TOKENS_O_D_W) {
@@ -158,9 +153,8 @@ public class TransactionManager {
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Method to handle command for withdrawal
+     * @param tokenizer as StringTokenizer
      */
     private void handleWCommand(StringTokenizer tokenizer) {
         if (tokenizer.countTokens() < MIN_TOKENS_O_D_W) {
@@ -188,9 +182,9 @@ public class TransactionManager {
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Method to handle display accounts command
+     * @param tokenizer as StringTokenizer
+     * @return List of all accounts
      */
     private void handlePCommand(StringTokenizer tokenizer) {
         if (!(accountDatabase.isEmpty())) {
@@ -204,9 +198,9 @@ public class TransactionManager {
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Method to handle display accounts and fees command
+     * @param tokenizer as StringTokenizer
+     * @return List of all accounts with fees addition
      */
     private void handlePICommand(StringTokenizer tokenizer) {
         if (!(accountDatabase.isEmpty())) {
@@ -219,23 +213,23 @@ public class TransactionManager {
     }
 
     /**
-     *
-     * @param
+     * Method to handle update account command
+     * @param tokenizer as StringTokenizer
      * @return
      */
     private void handleUBCommand(StringTokenizer tokenizer) {
         if (!(accountDatabase.isEmpty())) {
             System.out.println();
-            System.out.println("*list of accounts with fees and interests applied.");
+            System.out.print("*list of accounts with fees and interests applied.");
             accountDatabase.printUpdatedBalances();
-            System.out.println("*end of list.");
+            System.out.print("*end of list.");
             System.out.println();
         } else System.out.println("Account Database is empty!");
     }
 
     /**
      *
-     * @param
+     * @param dateOfBirth as String
      * @return
      */
     private Date parseDate(String dateOfBirth) {
@@ -252,7 +246,7 @@ public class TransactionManager {
 
     /**
      *
-     * @param
+     * @param date as Date
      * @return
      */
     private boolean futureDateCheck(Date date) {
@@ -276,7 +270,8 @@ public class TransactionManager {
 
     /**
      *
-     * @param
+     * @param date as Date
+     * @param accountType as String
      * @return
      */
     private boolean ageCheck(Date date, String accountType){
@@ -302,7 +297,8 @@ public class TransactionManager {
 
     /**
      *
-     * @param
+     * @param currentDate as Date
+     * @param ageDate as Date
      * @return
      */
     private int calculateAge(Date currentDate, Date ageDate) {
@@ -318,7 +314,8 @@ public class TransactionManager {
 
     /**
      *
-     * @param
+     * @param dob as Date
+     * @param accountType as String
      * @return
      */
     private boolean isValidDOB(Date dob, String accountType) {
@@ -340,7 +337,7 @@ public class TransactionManager {
 
     /**
      *
-     * @param
+     * @param initialDepositString as String
      * @return
      */
     public static boolean isValidInitialDeposit(String initialDepositString) {
@@ -360,7 +357,8 @@ public class TransactionManager {
 
     /**
      *
-     * @param
+     * @param amountString as String
+     * @param operationType as String
      * @return
      */
     public static boolean isValidAmount(String amountString, String operationType) {
@@ -381,7 +379,7 @@ public class TransactionManager {
 
     /**
      *
-     * @param
+     * @param campusCode as String
      * @return
      */
     public static boolean isValidCampus(String campusCode) {
@@ -396,7 +394,9 @@ public class TransactionManager {
 
     /**
      *
-     * @param
+     * @param fName as String
+     * @param lName as String
+     * @param dob as Date
      * @return
      */
     public void openChecking(String fName, String lName, Date dob,
@@ -415,7 +415,9 @@ public class TransactionManager {
 
     /**
      *
-     * @param
+     * @param fName as String
+     * @param lName as String
+     * @param dob as Date
      * @return
      */
     public void openCollegeChecking(String fName, String lName, Date dob,
@@ -444,7 +446,9 @@ public class TransactionManager {
 
     /**
      *
-     * @param
+     * @param fName as String
+     * @param lName as String
+     * @param dob as Date
      * @return
      */
     public void openSavings(String fName, String lName, Date dob,
@@ -470,7 +474,9 @@ public class TransactionManager {
 
     /**
      *
-     * @param
+     * @param fName as String
+     * @param lName as String
+     * @param dob as Date
      * @return
      */
     public void openMoneyMarket(String fName, String lName, Date dob,
@@ -492,7 +498,9 @@ public class TransactionManager {
 
     /**
      *
-     * @param
+     * @param fName as String
+     * @param lName as String
+     * @param dob as Date
      * @return
      */
     public void closeChecking(String fName, String lName, Date dob) {
@@ -503,7 +511,9 @@ public class TransactionManager {
 
     /**
      *
-     * @param
+     * @param fName as String
+     * @param lName as String
+     * @param dob as Date
      * @return
      */
     public void closeCollegeChecking(String fName, String lName, Date dob) {
@@ -514,7 +524,9 @@ public class TransactionManager {
 
     /**
      *
-     * @param
+     * @param fName as String
+     * @param lName as String
+     * @param dob as Date
      * @return
      */
     public void closeSavings(String fName, String lName, Date dob) {
@@ -525,7 +537,9 @@ public class TransactionManager {
 
     /**
      *
-     * @param
+     * @param fName as String
+     * @param lName as String
+     * @param dob as Date
      * @return
      */
     public void closeMoneyMarket(String fName, String lName, Date dob) {
@@ -536,7 +550,9 @@ public class TransactionManager {
 
     /**
      *
-     * @param
+     * @param fName as String
+     * @param lName as String
+     * @param dob as Date
      * @return
      */
     public void closeAccount(String fName, String lName, Date dob,
@@ -552,7 +568,10 @@ public class TransactionManager {
 
     /**
      *
-     * @param
+     * @param fName as String
+     * @param lName as String
+     * @param dob as Date
+     * @param deposit as double
      * @return
      */
     public void depositChecking(String fName, String lName, Date dob, double deposit) {
@@ -563,7 +582,10 @@ public class TransactionManager {
 
     /**
      *
-     * @param
+     * @param fName as String
+     * @param lName as String
+     * @param dob as Date
+     * @param deposit as double
      * @return
      */
     public void depositCollegeChecking(String fName, String lName, Date dob, double deposit) {
@@ -574,7 +596,10 @@ public class TransactionManager {
 
     /**
      *
-     * @param
+     * @param fName as String
+     * @param lName as String
+     * @param dob as Date
+     * @param deposit as double
      * @return
      */
     public void depositSavings(String fName, String lName, Date dob, double deposit) {
@@ -585,7 +610,10 @@ public class TransactionManager {
 
     /**
      *
-     * @param
+     * @param fName as String
+     * @param lName as String
+     * @param dob as Date
+     * @param deposit as double
      * @return
      */
     public void depositMoneyMarket(String fName, String lName, Date dob, double deposit) {
@@ -596,7 +624,9 @@ public class TransactionManager {
 
     /**
      *
-     * @param
+     * @param fName as String
+     * @param lName as String
+     * @param dob as Date
      * @return
      */
     public void depositAccount(String fName, String lName, Date dob,
@@ -608,7 +638,10 @@ public class TransactionManager {
 
     /**
      *
-     * @param
+     * @param fName as String
+     * @param lName as String
+     * @param dob as Date
+     * @param withdraw as double
      * @return
      */
     public void withdrawChecking(String fName, String lName, Date dob, double withdraw) {
@@ -619,7 +652,10 @@ public class TransactionManager {
 
     /**
      *
-     * @param
+     * @param fName as String
+     * @param lName as String
+     * @param dob as Date
+     * @param withdraw as double
      * @return
      */
     public void withdrawCollegeChecking(String fName, String lName, Date dob, double withdraw) {
@@ -630,7 +666,10 @@ public class TransactionManager {
 
     /**
      *
-     * @param
+     * @param fName as String
+     * @param lName as String
+     * @param dob as Date
+     * @param withdraw as double
      * @return
      */
     public void withdrawSavings(String fName, String lName, Date dob, double withdraw) {
@@ -641,7 +680,10 @@ public class TransactionManager {
 
     /**
      *
-     * @param
+     * @param fName as String
+     * @param lName as String
+     * @param dob as Date
+     * @param withdraw as double
      * @return
      */
     public void withdrawMoneyMarket(String fName, String lName, Date dob, double withdraw) {
@@ -652,7 +694,9 @@ public class TransactionManager {
 
     /**
      *
-     * @param
+     * @param fName as String
+     * @param lName as String
+     * @param dob as Date
      * @return
      */
     public void withdrawAccount(String fName, String lName, Date dob,

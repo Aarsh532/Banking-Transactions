@@ -8,9 +8,10 @@ public class CollegeChecking extends Checking{
     private static final double INTEREST_RATE = 0.01; // 1.0% annual interest rate
 
     /**
-     *
-     * @param
-     * @return
+     * Method to create an instance of college checking object
+     * @param holder as Profile
+     * @param balance as double
+     * @param campus as Campus
      */
     public CollegeChecking(Profile holder, double balance, Campus campus) {
         super(holder, balance);
@@ -18,9 +19,8 @@ public class CollegeChecking extends Checking{
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Method to return monthly fee's for college checking accounts
+     * @return 0
      */
     @Override
     public double monthlyFee() {
@@ -28,9 +28,8 @@ public class CollegeChecking extends Checking{
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Method to format string witn correct parameters
+     * @return string with correct format
      */
     @Override
     public String toString() {
@@ -40,9 +39,8 @@ public class CollegeChecking extends Checking{
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Method to format string into correct format with the addition of fees
+     * @return String in correct format
      */
     public String stringWithFees(){
         String feeStr = String.format("$%.2f", monthlyFee());
@@ -54,9 +52,9 @@ public class CollegeChecking extends Checking{
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Method to compare objects
+     * @param obj as Object
+     * @return true if objects are equal, false otherwise
      */
     @Override
     public boolean equals(Object obj) {
@@ -67,9 +65,9 @@ public class CollegeChecking extends Checking{
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Method to compare accounts
+     * @param o as Account
+     * @return int
      */
     @Override
     public int compareTo(Account o){

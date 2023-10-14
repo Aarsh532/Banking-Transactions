@@ -10,18 +10,17 @@ public class Checking extends Account {
     private static final int NUM_MONTHS = 12;
 
     /**
-     *
-     * @param
-     * @return
+     * Methpd to create instance of checking object
+     * @param holder as Profile
+     * @param balance as double
      */
     public Checking(Profile holder, double balance) {
         super(holder, balance);
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Calculates balance * interest
+     * @return monthlyInterest as double
      */
     @Override
     public double monthlyInterest() {
@@ -29,9 +28,8 @@ public class Checking extends Account {
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Calculates monthly fee based on balance in account
+     * @return monthlyFee as balance
      */
     @Override
     public double monthlyFee() {
@@ -42,9 +40,8 @@ public class Checking extends Account {
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Method to turn a string into the correct format
+     * @return string in correct format
      */
     @Override
     public String toString(){
@@ -57,9 +54,8 @@ public class Checking extends Account {
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Method to format a string with correct values and additional fees value
+     * @return string with correct format
      */
     public String stringWithFees(){
         String feeStr = String.format("$%.2f", monthlyFee());
@@ -71,9 +67,9 @@ public class Checking extends Account {
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Method to compare objects
+     * @param obj as Object
+     * @return true if obj equals, returns false otherwise
      */
     @Override
     public boolean equals(Object obj){
@@ -84,9 +80,9 @@ public class Checking extends Account {
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Method to compare account types
+     * @param o as Account
+     * @return int based on comparison
      */
     @Override
     public int compareTo(Account o) {

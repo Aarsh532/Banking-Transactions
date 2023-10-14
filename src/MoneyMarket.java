@@ -68,8 +68,8 @@ public class MoneyMarket extends Savings{
 
     /**
      * Compares accounts
-     * @param
-     * @return
+     * @param o as Account
+     * @return int
      */
     @Override
     public int compareTo(Account o) {
@@ -88,9 +88,8 @@ public class MoneyMarket extends Savings{
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Method to calculate balance after monthly intrest
+     * @return balance as double
      */
     @Override
     public double monthlyInterest() {
@@ -101,9 +100,8 @@ public class MoneyMarket extends Savings{
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Method to calculate monthly fee
+     * @return monthlyFee as double
      */
     @Override
     public double monthlyFee() {
