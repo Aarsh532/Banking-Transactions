@@ -16,6 +16,10 @@ public class Savings extends Account{
 
     }
 
+    /**
+     * Method to convert string into correct format
+     * @return string in correct format
+     */
     @Override
     public String toString() {
         String loyalString = isLoyal ? "::is loyal" : "";
@@ -27,6 +31,11 @@ public class Savings extends Account{
                 balance,
                 loyalString);
     }
+
+    /**
+     * Method to return string in correct format with fees
+     * @return string with correct format with additional fees and interest rates
+     */
     public String stringWithFees(){
         String feeStr = String.format("$%.2f", monthlyFee());
         String interestStr = String.format("$%.2f", monthlyInterest());
@@ -37,6 +46,11 @@ public class Savings extends Account{
                 balanceStr, loyalty, feeStr, interestStr);
     }
 
+    /**
+     * Method to check if two objects are equal
+     * @param obj as Object
+     * @return true if object equal's one another, false otherwise
+     */
     @Override
     public boolean equals(Object obj){
         if (this == obj) return true;
@@ -45,6 +59,11 @@ public class Savings extends Account{
         return savings.holder.equals(holder) || savings.isLoyal == isLoyal;
     }
 
+    /**
+     * Method to compare accounts
+     * @param o as Account
+     * @return true if they are equal, false otherwise
+     */
     @Override
     public int compareTo(Account o) {
         int typeComparison = this.getClass().getSimpleName()
@@ -73,6 +92,10 @@ public class Savings extends Account{
         return Boolean.compare(this.isLoyal, savings.isLoyal);
     }
 
+    /**
+     * Method to add interest rates to balances
+     * @return balance with additional interest
+     */
     @Override
     public double monthlyInterest() {
         if(isLoyal){
@@ -81,6 +104,10 @@ public class Savings extends Account{
         return balance*(INTEREST_RATE/NUM_MONTHS);
     }
 
+    /**
+     * Method to return the monthly fees based on balance
+     * @return 0 if balance is above the minimum balance, otherwise return the correct fees
+     */
     @Override
     public double monthlyFee() {
         if(balance >= MIN_BALANCE_FEE_WAIVED){
@@ -89,6 +116,10 @@ public class Savings extends Account{
         return MONTHLY_FEE;
     }
 
+    /**
+     * Method to set the isLoyal status to a savings account
+     * @param isLoyal as boolean
+     */
     public void setIsLoyal(boolean isLoyal) {
         this.isLoyal = isLoyal;
     }
