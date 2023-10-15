@@ -3,6 +3,7 @@
  * @author Aarsh, Hersh
  */
 
+package project2;
 import java.util.Calendar;
 import java.util.Scanner;
 import java.util.StringTokenizer;

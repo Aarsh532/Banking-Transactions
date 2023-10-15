@@ -1,7 +1,12 @@
+/**
+ * Savings class extends Account class and defines constants for fees and intrests for savings account
+ * @author Aarsh, Hersh
+ */
 
+package project2;
 public class Savings extends Account{
     protected boolean isLoyal; //loyal customer status
-    private static final double INTEREST_RATE = 0.04; // 1.0% annual interest rate
+    private static final double INTEREST_RATE = 0.04;
     private static final double LOYAL_INTEREST_RATE = 0.0425;
     private static final double MONTHLY_FEE = 25.0;
     private static final double MIN_BALANCE_FEE_WAIVED = 500;

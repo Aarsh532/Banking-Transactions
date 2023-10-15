@@ -3,6 +3,7 @@
  * @author Aarsh, Hersh
  */
 
+package project2;
 public class AccountDatabase {
     private static final int INCREMENT_AMOUNT = 4;
     private static final int INITIAL_CAPACITY = 4;
