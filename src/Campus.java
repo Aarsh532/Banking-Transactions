@@ -3,7 +3,6 @@
  * @author Aarsh, Hersh
  */
 
-package project2;
 public enum Campus {
     NEW_BRUNSWICK("0"),
     NEWARK("1"),

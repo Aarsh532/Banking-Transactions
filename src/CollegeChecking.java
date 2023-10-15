@@ -3,7 +3,6 @@
  * @author Aarsh, Hersh
  */
 
-package project2;
 public class CollegeChecking extends Checking{
     private Campus campus; //campus code
     private static final double INTEREST_RATE = 0.01; // 1.0% annual interest rate

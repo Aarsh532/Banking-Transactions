@@ -3,7 +3,6 @@
  * @author Aarsh, Hersh
  */
 
-package project2;
 public class MoneyMarket extends Savings{
     private int withdrawal; //number of withdrawals
     private static final double INTEREST_RATE = 0.0450;

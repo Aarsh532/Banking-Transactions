@@ -3,7 +3,6 @@
  * @author Aarsh, Hersh
  */
 
-package project2;
 public class Savings extends Account{
     protected boolean isLoyal; //loyal customer status
     private static final double INTEREST_RATE = 0.04;

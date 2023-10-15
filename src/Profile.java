@@ -3,7 +3,6 @@
  * @author Aarsh, Hersh
  */
 
-package project2;
 public class Profile implements Comparable<Profile>{
     private String fname;
     private String lname;

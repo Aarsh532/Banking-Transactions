@@ -3,7 +3,6 @@
  * @author Aarsh, Hersh
  */
 
-package project2;
 public class Checking extends Account {
     private static final double INTEREST_RATE = 0.01; // 1.0% annual interest rate
     private static final double MONTHLY_FEE = 12.0;
