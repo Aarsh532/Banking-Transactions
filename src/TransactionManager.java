@@ -22,9 +22,7 @@ public class TransactionManager {
     private Account[] closedAccounts;
 
     /**
-     *
-     * @param
-     * @return
+     * Method to initialize Transaction Manager Object
      */
     public TransactionManager() {
         this.accountDatabase = new AccountDatabase();
@@ -64,7 +62,7 @@ public class TransactionManager {
     }
 
     /**
-     * Mehtod to handle command for opening an account
+     * Method to handle command for opening an account
      * @param tokenizer as StringTokenizer
      */
     private void handleOCommand(StringTokenizer tokenizer) {
@@ -184,7 +182,6 @@ public class TransactionManager {
     /**
      * Method to handle display accounts command
      * @param tokenizer as StringTokenizer
-     * @return List of all accounts
      */
     private void handlePCommand(StringTokenizer tokenizer) {
         if (!(accountDatabase.isEmpty())) {
@@ -228,9 +225,9 @@ public class TransactionManager {
     }
 
     /**
-     *
+     * Method to handle parsing of date field in command line
      * @param dateOfBirth as String
-     * @return
+     * @return Date as new object with given year, month, and date
      */
     private Date parseDate(String dateOfBirth) {
         String[] dateComponents = dateOfBirth.split("/");
@@ -245,9 +242,9 @@ public class TransactionManager {
     }
 
     /**
-     *
+     * Method to check if given date is set in the future
      * @param date as Date
-     * @return
+     * @return true if date is in the future, false otherwise
      */
     private boolean futureDateCheck(Date date) {
         Calendar calendar = Calendar.getInstance();
@@ -269,10 +266,10 @@ public class TransactionManager {
     }
 
     /**
-     *
+     * Method to check if the given DOB is valid for each account
      * @param date as Date
      * @param accountType as String
-     * @return
+     * @return true if age is valid, false otherwise
      */
     private boolean ageCheck(Date date, String accountType){
         Calendar calendar = Calendar.getInstance();
@@ -296,10 +293,10 @@ public class TransactionManager {
     }
 
     /**
-     *
+     * Method to calculate age based off DOB
      * @param currentDate as Date
      * @param ageDate as Date
-     * @return
+     * @return int
      */
     private int calculateAge(Date currentDate, Date ageDate) {
         int age = currentDate.getYear() - ageDate.getYear();
@@ -313,10 +310,10 @@ public class TransactionManager {
     }
 
     /**
-     *
+     * Method to check if given DOB is valid
      * @param dob as Date
      * @param accountType as String
-     * @return
+     * @return true if valid DOB, false otherwise
      */
     private boolean isValidDOB(Date dob, String accountType) {
         if (!(dob.isValid())) {
@@ -336,9 +333,9 @@ public class TransactionManager {
     }
 
     /**
-     *
+     * Method to check if deposit is a valid amount
      * @param initialDepositString as String
-     * @return
+     * @return True if a deposit is a valid amount, false otherwise
      */
     public static boolean isValidInitialDeposit(String initialDepositString) {
         double initialDeposit;
@@ -356,10 +353,10 @@ public class TransactionManager {
     }
 
     /**
-     *
+     * Method to check if amount is negative or 0
      * @param amountString as String
      * @param operationType as String
-     * @return
+     * @return true if valid amount, false otherwise
      */
     public static boolean isValidAmount(String amountString, String operationType) {
         double amount;
@@ -378,9 +375,9 @@ public class TransactionManager {
     }
 
     /**
-     *
+     * Method to check if given campus code is valid
      * @param campusCode as String
-     * @return
+     * @return true if valid campus code, false otherwise
      */
     public static boolean isValidCampus(String campusCode) {
         try {
@@ -393,11 +390,11 @@ public class TransactionManager {
     }
 
     /**
-     *
+     * Method to handle opening of a checking account
      * @param fName as String
      * @param lName as String
      * @param dob as Date
-     * @return
+     * @return terminal message indicating a checking account is open, error statement otherwise
      */
     public void openChecking(String fName, String lName, Date dob,
                              double initialDeposit) {
@@ -414,11 +411,11 @@ public class TransactionManager {
     }
 
     /**
-     *
+     * Method to handle opening of a college checking account
      * @param fName as String
      * @param lName as String
      * @param dob as Date
-     * @return
+     * @return terminal message indicating a college checking account is open, error statement otherwise
      */
     public void openCollegeChecking(String fName, String lName, Date dob,
                                     double initialDeposit, StringTokenizer tokenizer) {
@@ -445,11 +442,11 @@ public class TransactionManager {
     }
 
     /**
-     *
+     * Method to open a savings account
      * @param fName as String
      * @param lName as String
      * @param dob as Date
-     * @return
+     * @return terminal message indicating a savings account is open, error statement otherwise
      */
     public void openSavings(String fName, String lName, Date dob,
                             double initialDeposit, StringTokenizer tokenizer) {
@@ -473,11 +470,11 @@ public class TransactionManager {
     }
 
     /**
-     *
+     * Method to open a money market account
      * @param fName as String
      * @param lName as String
      * @param dob as Date
-     * @return
+     * @return terminal message indicating a money market account is open, error statement otherwise
      */
     public void openMoneyMarket(String fName, String lName, Date dob,
                                 double initialDeposit) {
@@ -497,11 +494,10 @@ public class TransactionManager {
     }
 
     /**
-     *
+     * Method to close a checking account
      * @param fName as String
      * @param lName as String
      * @param dob as Date
-     * @return
      */
     public void closeChecking(String fName, String lName, Date dob) {
         Profile profileToClose = new Profile(fName, lName, dob);
@@ -510,11 +506,10 @@ public class TransactionManager {
     }
 
     /**
-     *
+     * Method to close a college checking account
      * @param fName as String
      * @param lName as String
      * @param dob as Date
-     * @return
      */
     public void closeCollegeChecking(String fName, String lName, Date dob) {
         Profile profileToClose = new Profile(fName, lName, dob);
@@ -523,11 +518,10 @@ public class TransactionManager {
     }
 
     /**
-     *
+     * Method to close a savings account
      * @param fName as String
      * @param lName as String
      * @param dob as Date
-     * @return
      */
     public void closeSavings(String fName, String lName, Date dob) {
         Profile profileToClose = new Profile(fName, lName, dob);
@@ -536,11 +530,10 @@ public class TransactionManager {
     }
 
     /**
-     *
+     * Method to close money market account
      * @param fName as String
      * @param lName as String
      * @param dob as Date
-     * @return
      */
     public void closeMoneyMarket(String fName, String lName, Date dob) {
         Profile profileToClose = new Profile(fName, lName, dob);
@@ -549,11 +542,10 @@ public class TransactionManager {
     }
 
     /**
-     *
+     * Method to close account
      * @param fName as String
      * @param lName as String
      * @param dob as Date
-     * @return
      */
     public void closeAccount(String fName, String lName, Date dob,
                              Account account, String accountType) {
@@ -567,12 +559,11 @@ public class TransactionManager {
     }
 
     /**
-     *
+     * Method to deposit money into a checking account
      * @param fName as String
      * @param lName as String
      * @param dob as Date
      * @param deposit as double
-     * @return
      */
     public void depositChecking(String fName, String lName, Date dob, double deposit) {
         Profile profileToDeposit = new Profile(fName, lName, dob);
@@ -581,12 +572,11 @@ public class TransactionManager {
     }
 
     /**
-     *
+     * Method to deposit money into a college checking account
      * @param fName as String
      * @param lName as String
      * @param dob as Date
      * @param deposit as double
-     * @return
      */
     public void depositCollegeChecking(String fName, String lName, Date dob, double deposit) {
         Profile profileToDeposit = new Profile(fName, lName, dob);
@@ -595,12 +585,11 @@ public class TransactionManager {
     }
 
     /**
-     *
+     * Method to deposit money into a savings account
      * @param fName as String
      * @param lName as String
      * @param dob as Date
      * @param deposit as double
-     * @return
      */
     public void depositSavings(String fName, String lName, Date dob, double deposit) {
         Profile profileToDeposit = new Profile(fName, lName, dob);
@@ -609,12 +598,11 @@ public class TransactionManager {
     }
 
     /**
-     *
+     * Method to deposit money into a money market account
      * @param fName as String
      * @param lName as String
      * @param dob as Date
      * @param deposit as double
-     * @return
      */
     public void depositMoneyMarket(String fName, String lName, Date dob, double deposit) {
         Profile profileToDeposit = new Profile(fName, lName, dob);
@@ -623,11 +611,10 @@ public class TransactionManager {
     }
 
     /**
-     *
+     * Method to deposit money into an account
      * @param fName as String
      * @param lName as String
      * @param dob as Date
-     * @return
      */
     public void depositAccount(String fName, String lName, Date dob,
                                Account account, String accountType) {
@@ -637,12 +624,11 @@ public class TransactionManager {
     }
 
     /**
-     *
+     * Method to withdraw money from a checking account
      * @param fName as String
      * @param lName as String
      * @param dob as Date
      * @param withdraw as double
-     * @return
      */
     public void withdrawChecking(String fName, String lName, Date dob, double withdraw) {
         Profile profileToWithdraw = new Profile(fName, lName, dob);
@@ -651,12 +637,11 @@ public class TransactionManager {
     }
 
     /**
-     *
+     * Method to withdraw money from a college checking account
      * @param fName as String
      * @param lName as String
      * @param dob as Date
      * @param withdraw as double
-     * @return
      */
     public void withdrawCollegeChecking(String fName, String lName, Date dob, double withdraw) {
         Profile profileToWithdraw = new Profile(fName, lName, dob);
@@ -665,12 +650,11 @@ public class TransactionManager {
     }
 
     /**
-     *
+     * Method to withdraw money from a savings account
      * @param fName as String
      * @param lName as String
      * @param dob as Date
      * @param withdraw as double
-     * @return
      */
     public void withdrawSavings(String fName, String lName, Date dob, double withdraw) {
         Profile profileToWithdraw = new Profile(fName, lName, dob);
@@ -679,12 +663,11 @@ public class TransactionManager {
     }
 
     /**
-     *
+     * Method to withdraw money from a money market account
      * @param fName as String
      * @param lName as String
      * @param dob as Date
      * @param withdraw as double
-     * @return
      */
     public void withdrawMoneyMarket(String fName, String lName, Date dob, double withdraw) {
         Profile profileToWithdraw = new Profile(fName, lName, dob);
@@ -693,11 +676,10 @@ public class TransactionManager {
     }
 
     /**
-     *
+     * Method to withdraw money from an account
      * @param fName as String
      * @param lName as String
      * @param dob as Date
-     * @return
      */
     public void withdrawAccount(String fName, String lName, Date dob,
                                 Account account, double withdraw, String accountType) {
