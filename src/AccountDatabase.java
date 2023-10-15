@@ -13,9 +13,7 @@ public class AccountDatabase {
     private static final double MIN_BALANCE_FEE_WAIVED = 2000;
 
     /**
-     *
-     * @param
-     * @return
+     * Method to create Account Database object
      */
     public AccountDatabase(){
         accounts = new Account[INITIAL_CAPACITY];
@@ -23,9 +21,9 @@ public class AccountDatabase {
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Method to find an account in a database
+     * @param account as Account
+     * @return index as int
      */
     private int find(Account account) {
         int index = NOT_FOUND;
@@ -39,9 +37,7 @@ public class AccountDatabase {
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Method to grow account database
      */
     private void grow(){
         Account[] copy = new Account[numAcct + INCREMENT_AMOUNT];
@@ -53,18 +49,18 @@ public class AccountDatabase {
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Parent method to find method
+     * @param account as Account
+     * @return true if account is found, false otherwise
      */
     public boolean contains(Account account){
         return find(account) != NOT_FOUND;
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Method to check if account is found in database if not create account
+     * @param account as Account
+     * @return true if account not found, false otherwise
      */
     public boolean open(Account account){
         if(contains(account)){
@@ -79,9 +75,9 @@ public class AccountDatabase {
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Method to check if account is found in database to close
+     * @param account as Account
+     * @return true if account is found to close, false otherwise
      */
     public boolean close(Account account){
         int removeIndex = find(account);
@@ -97,9 +93,9 @@ public class AccountDatabase {
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Method to check if account is found in database to withdraw
+     * @param account as Account
+     * @return true if account is found, false otherwise
      */
     public boolean withdraw(Account account){
         int index = find(account);
@@ -123,9 +119,7 @@ public class AccountDatabase {
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Method to sort account by account type
      */
     private void selectionSortAccountType() {
         int n = numAcct;
@@ -145,9 +139,8 @@ public class AccountDatabase {
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Method to check if account is found in database, then deposit money into account
+     * @param account as Account
      */
     public void deposit(Account account){
         int index = find(account);
@@ -158,9 +151,7 @@ public class AccountDatabase {
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Parent method to selectionSortAccountType
      */
     public void printSorted(){
         selectionSortAccountType();
@@ -170,9 +161,7 @@ public class AccountDatabase {
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Parent method to selectionSortAccountType, with additional fees and interests
      */
     public void printFeesAndInterests(){ //calculate interests/fees
         selectionSortAccountType();
@@ -182,9 +171,7 @@ public class AccountDatabase {
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Method to print accounts after updating the balance values with fees and interests
      */
     public void printUpdatedBalances(){ //apply the interests/fees
         selectionSortAccountType();
@@ -195,9 +182,8 @@ public class AccountDatabase {
     }
 
     /**
-     *
-     * @param
-     * @return
+     * Method to check if the number of accounts is 0
+     * @return true if empty, false otherwise
      */
     public boolean isEmpty(){
         return numAcct == 0;
