@@ -17,4 +17,86 @@ Account Database is empty!
 Account Database is empty!
 Account Database is empty!
 
+Missing data for opening an account.
+Missing data for opening an account.
+Missing data for opening an account.
+
+Not a valid amount.
+Initial deposit cannot be 0 or negative.
+Initial deposit cannot be 0 or negative.
+
+John Doe 2/19/2000(CC) opened.
+John Doe 2/19/2000(C) is already in the database.
+Jane Doe 10/1/2000(CC) opened.
+Jane Doe 10/1/2000(CC) is already in the database.
+
+Initial deposit cannot be 0 or negative.
+Jane Doe 10/1/1995(S) opened.
+Jane Doe 10/1/1995(S) is already in the database.
+
+Initial deposit cannot be 0 or negative.
+Minimum of $2000 to open a Money Market account.
+Jane Doe 10/1/1995(MM) opened.
+Jane Doe 10/1/1995(MM) is already in the database.
+
+April March 1/15/1987(C) opened.
+April March 1/15/1987(S) opened.
+Jason Brown 3/31/1998(C) opened.
+Kate Lindsey 8/31/2001(C) opened.
+Invalid campus code.
+Kate Lindsey 8/31/2001(CC) is already in the database.
+
+Roy Brooks 10/31/1979(MM) is already in the database.
+April March 1/15/1987(MM) is already in the database.
+Chris Young 9/20/2006(CC) opened.
+chris young 9/20/2006(CC) opened.
+Duke Ellington 11/2/2002(CC) opened.
+Kate Lindsey 11/2/2002(CC) opened.
+
+Accounts sorted by account type and profile.
+Checking::April March 1/15/1987::Balance $300.00
+Checking::Jason Brown 3/31/1998::Balance $1,200.00
+Checking::Kate Lindsey 8/31/2001::Balance $450.00
+CollegeChecking::Jane Doe 10/1/2000::Balance $999.99::NEW_BRUNSWICK
+CollegeChecking::John Doe 2/19/2000::Balance $599.99::NEW_BRUNSWICK
+CollegeChecking::Kate Lindsey 11/2/2002::Balance $200.00::NEWARK
+CollegeChecking::Chris Young 9/20/2006::Balance $500.00::NEW_BRUNSWICK
+CollegeChecking::Duke Ellington 11/2/2002::Balance $900.00::NEWARK
+CollegeChecking::chris young 9/20/2006::Balance $500.00::NEW_BRUNSWICK
+MoneyMarket::Jane Doe 10/1/1995::Balance $2,000.00::is loyal::Savings::withdrawal: 0
+Savings::Jane Doe 10/1/1995::Balance $1,000.00
+Savings::April March 1/15/1987::Balance $1,500.00::is loyal
+*end of list.
+
+*list of accounts with fee and monthly interest
+Checking::April March 1/15/1987::Balance $300.00::fee $12.00::monthly interest $0.25
+Checking::Jason Brown 3/31/1998::Balance $1,200.00::fee $0.00::monthly interest $1.00
+Checking::Kate Lindsey 8/31/2001::Balance $450.00::fee $12.00::monthly interest $0.38
+College Checking::John Doe 2/19/2000::Balance $599.99::NEW_BRUNSWICK::fee $0.00::monthly interest $0.50
+College Checking::Jane Doe 10/1/2000::Balance $999.99::NEW_BRUNSWICK::fee $0.00::monthly interest $0.83
+College Checking::Duke Ellington 11/2/2002::Balance $900.00::NEWARK::fee $0.00::monthly interest $0.75
+College Checking::Kate Lindsey 11/2/2002::Balance $200.00::NEWARK::fee $0.00::monthly interest $0.17
+College Checking::Chris Young 9/20/2006::Balance $500.00::NEW_BRUNSWICK::fee $0.00::monthly interest $0.42
+College Checking::chris young 9/20/2006::Balance $500.00::NEW_BRUNSWICK::fee $0.00::monthly interest $0.42
+Money Market::Savings::Jane Doe 10/1/1995::Balance $2,000.00::is loyal::withdrawal: 0::fee $0.00::monthly interest $7.92
+Savings::Jane Doe 10/1/1995::Balance $1,000.00::fee $0.00::monthly interest $3.33
+Savings::April March 1/15/1987::Balance $1,500.00::is loyal::fee $0.00::monthly interest $5.31
+*end of list.
+
+*list of accounts with fee and monthly interest
+Checking::April March 1/15/1987::Balance $300.00::fee $12.00::monthly interest $0.25
+Checking::Jason Brown 3/31/1998::Balance $1,200.00::fee $0.00::monthly interest $1.00
+Checking::Kate Lindsey 8/31/2001::Balance $450.00::fee $12.00::monthly interest $0.38
+College Checking::John Doe 2/19/2000::Balance $599.99::NEW_BRUNSWICK::fee $0.00::monthly interest $0.50
+College Checking::Jane Doe 10/1/2000::Balance $999.99::NEW_BRUNSWICK::fee $0.00::monthly interest $0.83
+College Checking::Duke Ellington 11/2/2002::Balance $900.00::NEWARK::fee $0.00::monthly interest $0.75
+College Checking::Kate Lindsey 11/2/2002::Balance $200.00::NEWARK::fee $0.00::monthly interest $0.17
+College Checking::Chris Young 9/20/2006::Balance $500.00::NEW_BRUNSWICK::fee $0.00::monthly interest $0.42
+College Checking::chris young 9/20/2006::Balance $500.00::NEW_BRUNSWICK::fee $0.00::monthly interest $0.42
+Money Market::Savings::Jane Doe 10/1/1995::Balance $2,000.00::is loyal::withdrawal: 0::fee $0.00::monthly interest $7.92
+Savings::Jane Doe 10/1/1995::Balance $1,000.00::fee $0.00::monthly interest $3.33
+Savings::April March 1/15/1987::Balance $1,500.00::is loyal::fee $0.00::monthly interest $5.31
+*end of list.
+
+Transaction Manager is terminated.
 
