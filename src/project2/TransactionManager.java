@@ -389,10 +389,9 @@ public class TransactionManager {
      * @param fName as String
      * @param lName as String
      * @param DOB as Date
-     * @return terminal message indicating a checking account is open, error statement otherwise
+     * @param initialDeposit as double
      */
-    public void openChecking(String fName, String lName, Date DOB,
-                             double initialDeposit) {
+    public void openChecking(String fName, String lName, Date DOB, double initialDeposit) {
         Profile newProfile = new Profile(fName, lName, DOB);
         Checking newChecking = new Checking(newProfile, initialDeposit);
         // check if CC or C in database
@@ -410,10 +409,10 @@ public class TransactionManager {
      * @param fName as String
      * @param lName as String
      * @param DOB as Date
-     * @return terminal message indicating a college checking account is open, error statement otherwise
+     * @param initialDeposit as double
+     * @param tokenizer as StringTokenizer
      */
-    public void openCollegeChecking(String fName, String lName, Date DOB,
-                                    double initialDeposit, StringTokenizer tokenizer) {
+    public void openCollegeChecking(String fName, String lName, Date DOB, double initialDeposit, StringTokenizer tokenizer) {
         if (!tokenizer.hasMoreTokens()) {
             System.out.println("Missing data for opening an account.");
             return;
@@ -441,10 +440,10 @@ public class TransactionManager {
      * @param fName as String
      * @param lName as String
      * @param DOB as Date
-     * @return terminal message indicating a savings account is open, error statement otherwise
+     * @param initialDeposit as double
+     * @param tokenizer as StringTokenizer
      */
-    public void openSavings(String fName, String lName, Date DOB,
-                            double initialDeposit, StringTokenizer tokenizer) {
+    public void openSavings(String fName, String lName, Date DOB, double initialDeposit, StringTokenizer tokenizer) {
         if (!tokenizer.hasMoreTokens()) {
             System.out.println("Missing data for opening an account.");
             return;
@@ -469,10 +468,9 @@ public class TransactionManager {
      * @param fName as String
      * @param lName as String
      * @param DOB as Date
-     * @return terminal message indicating a money market account is open, error statement otherwise
+     * @param initialDeposit as double
      */
-    public void openMoneyMarket(String fName, String lName, Date DOB,
-                                double initialDeposit) {
+    public void openMoneyMarket(String fName, String lName, Date DOB, double initialDeposit) {
         if (initialDeposit < MoneyMarket.MIN_BALANCE_FEE_WAIVED) {
             System.out.println("Minimum of $2000 to open a Money Market account.");
             return;
@@ -541,9 +539,10 @@ public class TransactionManager {
      * @param fName as String
      * @param lName as String
      * @param DOB as Date
+     * @param account as Account
+     * @param accountType as String
      */
-    public void closeAccount(String fName, String lName, Date DOB,
-                             Account account, String accountType) {
+    public void closeAccount(String fName, String lName, Date DOB, Account account, String accountType) {
         if (accountDatabase.close(account)) {
             System.out.println(fName + " " + lName + " " + DOB.dateString()
                     + "(" + accountType + ") has been closed.");
@@ -610,9 +609,10 @@ public class TransactionManager {
      * @param fName as String
      * @param lName as String
      * @param DOB as Date
+     * @param account as Account
+     * @param accountType as String
      */
-    public void depositAccount(String fName, String lName, Date DOB,
-                               Account account, String accountType) {
+    public void depositAccount(String fName, String lName, Date DOB, Account account, String accountType) {
         accountDatabase.deposit(account);
         System.out.println(fName + " " + lName + " " + DOB.dateString() + "("
                 + accountType + ") Deposit - balance updated.");
@@ -675,9 +675,11 @@ public class TransactionManager {
      * @param fName as String
      * @param lName as String
      * @param DOB as Date
+     * @param account as Account
+     * @param withdraw as double
+     * @param accountType as String
      */
-    public void withdrawAccount(String fName, String lName, Date DOB,
-                                Account account, double withdraw, String accountType) {
+    public void withdrawAccount(String fName, String lName, Date DOB, Account account, double withdraw, String accountType) {
         if (!accountDatabase.withdraw(account)) {
             if (withdraw > account.balance) {
                 System.out.println(fName + " " + lName + " " + DOB.dateString()

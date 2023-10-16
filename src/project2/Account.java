@@ -16,7 +16,6 @@ public abstract class Account implements Comparable<Account> {
      * Method to initialize Account object
      * @param holder as Profile
      * @param balance as double
-     * @return
      */
     public Account(Profile holder, double balance) {
         this.holder = holder;
