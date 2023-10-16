@@ -6,9 +6,9 @@ package project2;
  */
 
 public class Profile implements Comparable<Profile>{
-    private String fname;
-    private String lname;
-    private Date dob;
+    private String fName;
+    private String lName;
+    private Date DOB;
     private static final int EQUAL_CONDITION = 0;
 
     /**
@@ -18,17 +18,17 @@ public class Profile implements Comparable<Profile>{
      * @param dateOfBirth as Date
      */
     public Profile(String firstName, String lastName, Date dateOfBirth) {
-        this.fname = firstName;
-        this.lname = lastName;
-        this.dob = dateOfBirth;
+        this.fName = firstName;
+        this.lName = lastName;
+        this.DOB = dateOfBirth;
     }
 
     /**
      * Method to return first name
-     * @return fname as String
+     * @return fName as String
      */
     public String getFname(){
-        return fname;
+        return fName;
     }
 
     /**
@@ -36,15 +36,15 @@ public class Profile implements Comparable<Profile>{
      * @return lanem as String
      */
     public String getLname() {
-        return lname;
+        return lName;
     }
 
     /**
      * Method to return DOB
-     * @return dob as Date
+     * @return DOB as Date
      */
     public Date getDob() {
-        return dob;
+        return DOB;
     }
 
     /**
@@ -56,8 +56,8 @@ public class Profile implements Comparable<Profile>{
     public boolean equals(Object obj){
         if(obj instanceof Profile){
             Profile o = (Profile) obj;
-            return fname.equals(o.fname) && lname.equals(o.lname)
-                    && dob.compareTo(o.dob) == EQUAL_CONDITION;
+            return fName.equals(o.fName) && lName.equals(o.lName)
+                    && DOB.compareTo(o.DOB) == EQUAL_CONDITION;
         }
         return false;
 
@@ -70,13 +70,13 @@ public class Profile implements Comparable<Profile>{
      */
     @Override
     public int compareTo(Profile o) {
-        if(this.lname.compareTo(o.lname) > 0){
+        if(this.lName.compareTo(o.lName) > 0){
             return 1;
         }
-        if(this.fname.compareTo(o.fname) < 0){
+        if(this.fName.compareTo(o.fName) < 0){
             return -1;
         }
-        if (this.dob.compareTo(o.dob) > 0) {
+        if (this.DOB.compareTo(o.DOB) > 0) {
             return 1;
         }
 

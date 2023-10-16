@@ -10,8 +10,6 @@ public class AccountDatabase {
     private static final int INITIAL_CAPACITY = 4;
     private Account[] accounts; //list of various types of accounts
     private int numAcct; //number of accounts in the array
-    private static final int NOT_FOUND = -1;
-    private static final int STARTING_NUM_ACCT = 0;
     private static final double MIN_BALANCE_FEE_WAIVED = 2000;
 
     /**
@@ -19,7 +17,7 @@ public class AccountDatabase {
      */
     public AccountDatabase(){
         accounts = new Account[INITIAL_CAPACITY];
-        numAcct = STARTING_NUM_ACCT;
+        numAcct = 0;
     }
 
     /**
@@ -28,7 +26,7 @@ public class AccountDatabase {
      * @return index as int
      */
     private int find(Account account) {
-        int index = NOT_FOUND;
+        int index = -1;
         for (int i = 0; i < numAcct; i++) {
             if (accounts[i].equals(account)) {
                 index = i;
@@ -56,7 +54,7 @@ public class AccountDatabase {
      * @return true if account is found, false otherwise
      */
     public boolean contains(Account account){
-        return find(account) != NOT_FOUND;
+        return find(account) != -1;
     }
 
     /**
@@ -83,7 +81,7 @@ public class AccountDatabase {
      */
     public boolean close(Account account){
         int removeIndex = find(account);
-        if (removeIndex != NOT_FOUND) {
+        if (removeIndex != -1) {
             for (int i = removeIndex; i < numAcct - 1; i++) {
                 accounts[i] = accounts[i + 1];
             }
@@ -101,7 +99,7 @@ public class AccountDatabase {
      */
     public boolean withdraw(Account account){
         int index = find(account);
-        if (index == NOT_FOUND) {
+        if (index == -1) {
             return false;
         }
         Account acct = accounts[index];
@@ -146,7 +144,7 @@ public class AccountDatabase {
      */
     public void deposit(Account account){
         int index = find(account);
-        if (index == NOT_FOUND) {
+        if (index == -1) {
             return;
         }
         accounts[index].balance += account.balance;

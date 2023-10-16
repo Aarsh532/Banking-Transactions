@@ -18,12 +18,12 @@ public class MoneyMarket extends Savings{
 
     /**
      * Creates the money market instance
-     * @param holder as Profile object
+     * @param profile as Profile object
      * @param balance as double
      * @param isLoyal as boolean
      */
-    public MoneyMarket(Profile holder, double balance, boolean isLoyal) {
-        super(holder, balance);
+    public MoneyMarket(Profile profile, double balance, boolean isLoyal) {
+        super(profile, balance);
         isLoyal = true;
         this.isLoyal = isLoyal;
 
@@ -45,13 +45,13 @@ public class MoneyMarket extends Savings{
      * @return String with correct format
      */
     public String stringWithFees(){
-        String feeStr = String.format("$%.2f", monthlyFee());
-        String interestStr = String.format("$%.2f", monthlyInterest());
-        String balanceStr = String.format("$%,.2f", balance);
+        String feeString = String.format("$%.2f", monthlyFee());
+        String interestString = String.format("$%.2f", monthlyInterest());
+        String balanceString = String.format("$%,.2f", balance);
         String loyalty = isLoyal ? "::is loyal" : "";
         return String.format("Money Market::Savings::%s %s %s::Balance %s%s::withdrawal: %d::fee %s::monthly interest %s",
                 holder.getFname(), holder.getLname(), holder.getDob().dateString(),
-                balanceStr, loyalty, withdrawal, feeStr, interestStr);
+                balanceString, loyalty, withdrawal, feeString, interestString);
     }
 
     /**
@@ -64,26 +64,26 @@ public class MoneyMarket extends Savings{
         if(this == obj) return true;
         if(obj == null || getClass() != obj.getClass()) return false;
         if(!super.equals(obj)) return false;
-        MoneyMarket mmAccount = (MoneyMarket) obj;
-        return withdrawal == mmAccount.withdrawal;
+        MoneyMarket mmAcct = (MoneyMarket) obj;
+        return withdrawal == mmAcct.withdrawal;
     }
 
     /**
      * Compares accounts
-     * @param o as Account
+     * @param a as Account
      * @return int
      */
     @Override
-    public int compareTo(Account o) {
-        int superComparison= super.compareTo(o);
+    public int compareTo(Account a) {
+        int superComparison= super.compareTo(a);
         if(superComparison != 0){
             return superComparison;
         }
-        MoneyMarket mmAccount = (MoneyMarket) o;
-        if(this.withdrawal < mmAccount.withdrawal){
+        MoneyMarket mmAcct = (MoneyMarket) a;
+        if(this.withdrawal < mmAcct.withdrawal){
             return -1;
         }
-        if(this.withdrawal > mmAccount.withdrawal){
+        if(this.withdrawal > mmAcct.withdrawal){
             return 1;
         }
         return 0;

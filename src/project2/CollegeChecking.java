@@ -11,12 +11,12 @@ public class CollegeChecking extends Checking{
 
     /**
      * Method to create an instance of college checking object
-     * @param holder as Profile
+     * @param profile as Profile
      * @param balance as double
      * @param campus as Campus
      */
-    public CollegeChecking(Profile holder, double balance, Campus campus) {
-        super(holder, balance);
+    public CollegeChecking(Profile profile, double balance, Campus campus) {
+        super(profile, balance);
         this.campus = campus;
     }
 
@@ -68,16 +68,16 @@ public class CollegeChecking extends Checking{
 
     /**
      * Method to compare accounts
-     * @param o as Account
+     * @param a as Account
      * @return int
      */
     @Override
-    public int compareTo(Account o){
-        int superComparison = super.compareTo(o);
+    public int compareTo(Account a){
+        int superComparison = super.compareTo(a);
         if(superComparison != 0){
             return superComparison;
         }
-        return this.campus.compareTo(((CollegeChecking) o).campus);
+        return this.campus.compareTo(((CollegeChecking) a).campus);
     }
 
 }

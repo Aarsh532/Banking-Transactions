@@ -11,20 +11,20 @@ public class Date implements Comparable<Date>{
     private int day;
 
     private static final int MIN_YEAR = 1;
-    public static final int JAN = 1;
-    public static final int FEB = 2;
-    public static final int MAR = 3;
-    public static final int APR = 4;
+    public static final int JANUARY = 1;
+    public static final int FEBRUARY = 2;
+    public static final int MARCH = 3;
+    public static final int APRIL = 4;
     public static final int MAY = 5;
-    public static final int JUN = 6;
-    public static final int JUL = 7;
-    public static final int AUG = 8;
-    public static final int SEP = 9;
-    public static final int OCT = 10;
-    public static final int NOV = 11;
-    public static final int DEC = 12;
-    public static final int DAYS_IN_FEB_NON_LEAP = 28;
-    public static final int DAYS_IN_FEB_LEAP = 29;
+    public static final int JUNE = 6;
+    public static final int JULY = 7;
+    public static final int AUGUST = 8;
+    public static final int SEPTEMBER = 9;
+    public static final int OCTOBER = 10;
+    public static final int NOVEMBER = 11;
+    public static final int DECEMBER = 12;
+    public static final int DAYS_IN_FEBRUARY_NON_LEAP = 28;
+    public static final int DAYS_IN_FEBRUARY_LEAP = 29;
     public static final int DAYS_IN_SHORT_MONTH = 30;
     public static final int DAYS_IN_LONG_MONTH = 31;
     public static final int MIN_DAYS_IN_MONTH = 1;
@@ -116,7 +116,7 @@ public class Date implements Comparable<Date>{
      * @return true if date is a valid calendar date, false otherwise
      */
     public boolean isValid(){
-        if (month < JAN || month > DEC) {
+        if (month < JANUARY || month > DECEMBER) {
             return false;
         }
 
@@ -125,20 +125,20 @@ public class Date implements Comparable<Date>{
         }
 
         switch (month) {
-            case JAN, MAR, MAY, JUL, AUG, OCT, DEC -> {
+            case JANUARY, MARCH, MAY, JULY, AUGUST, OCTOBER, DECEMBER -> {
                 return day >= MIN_DAYS_IN_MONTH && day <= DAYS_IN_LONG_MONTH;
             }
-            case APR, JUN, SEP, NOV -> {
+            case APRIL, JUNE, SEPTEMBER, NOVEMBER -> {
                 return day >= MIN_DAYS_IN_MONTH && day <= DAYS_IN_SHORT_MONTH;
             }
-            case FEB -> {
+            case FEBRUARY -> {
                 if (isLeapYear(year)) {
                     return day >= MIN_DAYS_IN_MONTH && day <=
-                            DAYS_IN_FEB_LEAP;
+                            DAYS_IN_FEBRUARY_LEAP;
                 }
                 else {
                     return day >= MIN_DAYS_IN_MONTH && day <=
-                            DAYS_IN_FEB_NON_LEAP;
+                            DAYS_IN_FEBRUARY_NON_LEAP;
                 }
             }
             default -> {

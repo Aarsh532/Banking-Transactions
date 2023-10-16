@@ -10,32 +10,32 @@ public enum Campus {
     NEWARK("1"),
     CAMDEN("2");
 
-    private final String code;
+    private final String campusCode;
 
     /**
      * Sets the correct campus based on the code
-     * @param code as String
+     * @param campusCode as String
      */
-    private Campus(String code) {
-        this.code = code;
+    private Campus(String campusCode) {
+        this.campusCode = campusCode;
     }
 
     /**
      * Method to return campus code
-     * @return code as String
+     * @return campusCode as String
      */
     public String getCode() {
-        return code;
+        return campusCode;
     }
 
     /**
      * Method to return the correct campus based on campus code
-     * @param code as String
+     * @param campusCode as String
      * @return campus as campus
      */
-    public static Campus fromCode(String code) {
+    public static Campus fromCode(String campusCode) {
         for (Campus campus : Campus.values()) {
-            if (campus.getCode().equals(code)) {
+            if (campus.getCode().equals(campusCode)) {
                 return campus;
             }
         }
