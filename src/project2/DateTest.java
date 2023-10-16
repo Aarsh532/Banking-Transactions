@@ -1,5 +1,7 @@
 package project2;
 
+import project2.Date;
+
 import static org.junit.Assert.*;
 
 /**

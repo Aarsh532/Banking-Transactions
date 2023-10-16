@@ -1,10 +1,15 @@
 package project2;
+
 import org.junit.Test;
+import project2.AccountDatabase;
+import project2.Checking;
+import project2.Date;
+import project2.Profile;
 
 import static org.junit.Assert.*;
 
 /**
- * AccountDatabaseTest class is used to test 1 invalid case and 1 valid case of the close method
+ * project2.AccountDatabaseTest class is used to test 1 invalid case and 1 valid case of the close method
  * @author Aarsh, Hersh
  */
 public class AccountDatabaseTest {
