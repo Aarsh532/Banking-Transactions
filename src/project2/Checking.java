@@ -1,3 +1,5 @@
+package project2;
+
 /**
  * Checking class extends the Account Class
  * @author Aarsh, Hersh

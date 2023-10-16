@@ -1,3 +1,5 @@
+package project2;
+
 /**
  * Money Market Class extends the savings class
  * @author Aarsh, Hersh

@@ -1,3 +1,5 @@
+package project2;
+
 /**
  * Campus class handles the enum for campuses in the college checking class
  * @author Aarsh, Hersh

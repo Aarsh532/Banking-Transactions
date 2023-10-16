@@ -1,3 +1,5 @@
+package project2;
+
 /**
  * Profile class defines the first name, last name, and date of birth for account holders
  * @author Aarsh, Hersh

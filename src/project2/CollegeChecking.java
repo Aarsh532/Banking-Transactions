@@ -1,3 +1,5 @@
+package project2;
+
 /**
  * College Checking class extends the Checking Class
  * @author Aarsh, Hersh

@@ -1,3 +1,5 @@
+package project2;
+
 /**
  * Account class is an abstract class that handles all account information
  * @author Aarsh, Hersh

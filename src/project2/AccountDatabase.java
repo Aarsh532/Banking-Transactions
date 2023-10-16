@@ -1,3 +1,5 @@
+package project2;
+
 /**
  * Account Database handles the account array and all methods for each of the commands
  * @author Aarsh, Hersh

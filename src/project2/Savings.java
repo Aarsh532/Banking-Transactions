@@ -1,3 +1,5 @@
+package project2;
+
 /**
  * Savings class extends Account class and defines constants for fees and intrests for savings account
  * @author Aarsh, Hersh
